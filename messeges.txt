@@ -1,0 +1,15 @@
+1)The messages framework
+2)При помощи этой платформы можно сохранить сообщения из одного запроса и вывести их в следующих запросах .
+3)https://docs.djangoproject.com/en/4.1/ref/contrib/messages/
+4) from django.contrib import messages
+ messages.error(request, 'Something went wrong')
+5) {% if messages %}
+      <ul class="messages">
+          {% for message in messages %}
+               <li class="{{ message.tags }}">
+                   {{ message|safe }}
+                   <a href="#" class="close">✖</a>
+               </li>
+          {% endfor %}
+      </ul>
+ {% endif %}
